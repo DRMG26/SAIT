@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAIT", "SAIT\SAIT.csproj", "{81E5C7A1-5820-494F-8107-6EDEC4196F80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAIT", "SAIT\SAIT.csproj", "{FBB16AD4-BA54-414A-A204-75404DC1206A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{81E5C7A1-5820-494F-8107-6EDEC4196F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81E5C7A1-5820-494F-8107-6EDEC4196F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81E5C7A1-5820-494F-8107-6EDEC4196F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81E5C7A1-5820-494F-8107-6EDEC4196F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB16AD4-BA54-414A-A204-75404DC1206A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB16AD4-BA54-414A-A204-75404DC1206A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB16AD4-BA54-414A-A204-75404DC1206A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB16AD4-BA54-414A-A204-75404DC1206A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D30A7CBE-4C5F-4DF0-B622-39A1401AB4EC}
+		SolutionGuid = {1654D9C6-E7B5-4A61-B462-98C708B494DD}
 	EndGlobalSection
 EndGlobal
