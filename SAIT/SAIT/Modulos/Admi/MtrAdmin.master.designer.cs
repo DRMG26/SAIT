@@ -22,6 +22,33 @@ namespace SAIT.Modulos.Administrativo {
         protected global::System.Web.UI.WebControls.Button BtnCerrar;
         
         /// <summary>
+        /// Control LBtnInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBtnInicio;
+        
+        /// <summary>
+        /// Control LBtnAudi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBtnAudi;
+        
+        /// <summary>
+        /// Control LBtnPerfi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBtnPerfi;
+        
+        /// <summary>
         /// Control MainContent.
         /// </summary>
         /// <remarks>

@@ -12,7 +12,10 @@
             <h2>Auditoria</h2>
             <p>Formulario en donde se puede observar los moveimientos de cada tabla por BD de cada Usuario</p>
             <p>
-                <asp:Button ID="BtnAudi" class="btn btn-outline-primary" runat="server" UseSubmitBehavior="false" Text="Entrar" OnClick="BtnAudi_Click" />
+                <asp:LinkButton OnClick="BtnAudi_Click" ID="BtnAudi" runat="server" CssClass="btn btn-outline-primary">
+                    <span>Entrar &raquo;</span>
+                </asp:LinkButton>
+
             </p>
         </div>
 
@@ -22,7 +25,9 @@
                 Formulario en donde a cada usuario se prodra asigarnar un respectivo perfil.
             </p>
             <p>
-                <a class="btn btn-outline-primary" href="#">Entrar &raquo;</a>
+                <asp:LinkButton OnClick="LBtnPefi_click" ID="LBtnPerfi" runat="server" CssClass="btn btn-outline-primary">
+                    <span>Entrar &raquo;</span>
+                </asp:LinkButton>
             </p>
         </div>
         <div class="col-md-3">
@@ -31,7 +36,9 @@
                 Formulario en donde se prodra requistrar nuevos documenos o grupos y relacionarlos
             </p>
             <p>
-                <a class="btn btn-outline-primary" href="#">Entrar &raquo;</a>
+                <asp:LinkButton ID="LBtnDocu" runat="server" CssClass="btn btn-outline-primary">
+                    <span>Entrar &raquo;</span>
+                </asp:LinkButton>
             </p>
         </div>
         <div class="col-md-3">
@@ -40,7 +47,9 @@
                 Formulario en donde se prodra requistrar nuevos usuarios o actualizar su informacion
             </p>
             <p>
-                <a id="BtnCerrar" class="btn btn-outline-primary" href="#">Entrar &raquo;</a>
+                <asp:LinkButton ID="LBtnUsu" runat="server" CssClass="btn btn-outline-primary">
+                    <span>Entrar &raquo;</span>
+                </asp:LinkButton>
             </p>
         </div>
     </div>

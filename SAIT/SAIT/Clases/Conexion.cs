@@ -15,7 +15,7 @@ namespace SAIT.Clases
             {
                 string StConBd = System.Configuration.ConfigurationManager.AppSettings["CONEXION"];
                 //SqlConnection CON = new SqlConnection(ConBd);
-                SqlConnection SqlCon = new SqlConnection("Server=LAPTOP-VQ2EMF5I;Database=MADRID2019;User Id=SA;Password = SA;");
+                SqlConnection SqlCon = new SqlConnection("Server=LAPTOP-VQ2EMF5I;Database=Proyecto;User Id=SA;Password = SA;");
                 SqlCon.Open();
                 return SqlCon;
             }

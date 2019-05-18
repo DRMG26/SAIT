@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SAIT.Clases;
 
 namespace SAIT.Modulos.Admi
 {
     public partial class FrmMenuAdm : System.Web.UI.Page
     {
+        UrlModuloAdmin UrlAdmin = new UrlModuloAdmin();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,22 +18,13 @@ namespace SAIT.Modulos.Admi
 
         protected void BtnAudi_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FrmAudi.aspx");
+            Response.Redirect(UrlAdmin.StrAuditor);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void LBtnPefi_click(object sender, EventArgs e)
         {
-            Response.Redirect("../../Default.aspx");
+            Response.Redirect(UrlAdmin.StrPerfiles);
         }
-
-        protected void BtnCerrar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../../Default.aspx");
-        }
-
-        protected void btnPrueba_Click(object sender, EventArgs e)
-        {
-             Response.Redirect("Default.aspx");
-        }
+        
     }
 }

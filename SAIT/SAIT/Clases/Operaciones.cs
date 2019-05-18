@@ -39,13 +39,22 @@ namespace SAIT.Clases
 
                     }
                 }
-                
+
                 SqlDataAdapter dataA = new SqlDataAdapter(cmd);
                 dataA.Fill(dt);
+                cmd.Connection.Close();
                 return dt;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+
+                dt.Columns.Add("Resultado", typeof(int));
+                dt.Columns.Add("Mensaje", typeof(string));
+                DataRow Fila = dt.NewRow();
+                Fila["Resultado"] = 0;
+                Fila["MEnsaje"] =  e.ToString().Replace("\r\n", "").Replace("\n", "").Replace("\r", "").Replace("'", "*").Replace(",", "_"); ;
+                dt.Rows.Add(Fila);
+
                 return dt;
             }
             

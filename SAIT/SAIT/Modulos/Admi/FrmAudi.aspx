@@ -18,21 +18,6 @@
                         <label>Fecha</label>
                         <asp:TextBox type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control" ID="TxtFecha" runat="server"></asp:TextBox>
                     </div>
-                    <%--<div class="col-md-6 ">
-                        <br />
-                        <div class="row">
-                            <div class="col-md-4 ">
-                                <asp:RadioButton ID="RadioButton1" runat="server" Text=" Insercion" />
-                            </div>
-                            <div class="col-md-4 ">
-                                <asp:RadioButton ID="RadioButton2" runat="server" Text=" Modificacion" />
-                            </div>
-                            <div class="col-md-4 ">
-                                <asp:RadioButton ID="RadioButton3" runat="server" Text=" Eliminacion" />
-                            </div>
-
-                        </div>
-                    </div>--%>
                 </div>
                 <p>
                     <label>Usuario</label>

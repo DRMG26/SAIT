@@ -179,12 +179,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\sb-admin.css" />
+    <Content Include="css\sb-admin.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
     <Content Include="Modulos\Admi\FrmAudi.aspx" />
     <Content Include="Modulos\Admi\FrmMenuAdm.aspx" />
+    <Content Include="Modulos\Admi\FrmPerfiles.aspx" />
     <Content Include="Modulos\Admi\MtrAdmin.master" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -380,6 +383,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Operaciones.cs" />
+    <Compile Include="Clases\UrlModuloAdmin.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -411,6 +415,13 @@
     </Compile>
     <Compile Include="Modulos\Admi\FrmMenuAdm.aspx.designer.cs">
       <DependentUpon>FrmMenuAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Admi\FrmPerfiles.aspx.cs">
+      <DependentUpon>FrmPerfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modulos\Admi\FrmPerfiles.aspx.designer.cs">
+      <DependentUpon>FrmPerfiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Admi\MtrAdmin.master.cs">
       <DependentUpon>MtrAdmin.master</DependentUpon>
@@ -446,6 +457,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Perfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

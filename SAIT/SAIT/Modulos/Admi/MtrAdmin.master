@@ -4,7 +4,7 @@
 
 <html lang="en">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
@@ -12,17 +12,33 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/css/sb-admin.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    
+    <script type="text/javascript">
+
+        function Mensaje(Mensaje,Titulo,Typo) {
+            Swal.fire({
+                type: Typo,
+                title: Mensaje,
+                text: Titulo
+            })
+        }
+        
+       
+
+    </script>
 
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager runat="server" >
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
-                <%--<asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
@@ -33,54 +49,106 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />--%>
+                <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">ADMNISTRACION</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div id="wrapper">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#">ADMNISTRACION</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExample05">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="FrmMenuAdm.aspx">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="BbtAudi" class="nav-link" href="#">Auditoria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Perfiles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Documentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Usuarios</a>
-                    </li>
-                </ul>
-                <div class="form-inline my-2 my-md-0">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <asp:Button ID="BtnCerrar" class="nav-link btn btn-outline-danger" runat="server" OnClick="BtnCerrar_Click" Text="Cerrar Secion"/>
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav mr-auto">
+                        <%--<li class="nav-item active">
+                            <a class="nav-link" href="FrmMenuAdm.aspx">Inicio</a>
                         </li>
+                        <li class="nav-item">
+                            <a id="BbtAudi" class="nav-link" href="#">Auditoria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Perfiles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Documentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Usuarios</a>
+                        </li>--%>
                     </ul>
+                    <div class="form-inline my-2 my-md-0">
+                        <ul class="navbar-nav">
+                            <li class="nav-item" id="Inicio">
+                                <asp:Button ID="BtnCerrar" class="nav-link btn btn-outline-danger" runat="server" OnClick="BtnCerrar_Click" Text="Cerrar Secion" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+            <!-- Sidebar -->
 
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
-            </footer>
+            <ul class="sidebar navbar-nav">
+                <li class="nav-item" ID="Ini">
+                    <asp:LinkButton OnClick="LBtnInicio_Click" ID="LBtnInicio" runat="server" CssClass="nav-link">
+                        <i class="fas fa-fw fa-chart-area">
+                            <span>Inicio</span>
+                        </i>
+                    </asp:LinkButton>
+                </li>
+                <%--  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Login Screens:</h6>
+          <a class="dropdown-item" href="login.html">Login</a>
+          <a class="dropdown-item" href="register.html">Register</a>
+          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Other Pages:</h6>
+          <a class="dropdown-item" href="404.html">404 Page</a>
+          <a class="dropdown-item" href="blank.html">Blank Page</a>
         </div>
+      </li>--%>
+                <li class="nav-item">
+                    <asp:LinkButton OnClick="LBtnAudi_Click" ID="LBtnAudi" runat="server" CssClass="nav-link">
+                        <i class="fas fa-fw fa-chart-area">
+                            <span>Auditoria</span>
+                        </i>
+                    </asp:LinkButton>
+                </li>
+                <li class="nav-item">
+                    <asp:LinkButton OnClick="LBtnPerfi_Click" ID="LBtnPerfi" runat="server" CssClass="nav-link">
+                        <i class="fas fa-fw fa-chart-area">
+                            <span>Perfiles</span>
+                        </i>
+                    </asp:LinkButton>
+                </li>
+            </ul>
+
+            <div id="content-wrapper">
+
+                <div class="container-fluid">
+
+                    <div class="container body-content">
+                        
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <hr />
+                        <footer>
+                            <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+                        </footer>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
     </form>
 </body>
+
 </html>
