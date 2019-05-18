@@ -2,31 +2,32 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    
+    <div class="row ">
+
+        <div class="col-md-3">
+            <div class="jumbotron">
+                <center>
+                    <h1>Perfiles</h1>
+                </center>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
 
 
-            <div class="row ">
-                
-                <div class="col-md-3">
-                    <div class="jumbotron">
-                        <center>
-                            <h1>Perfiles</h1>
-                        </center>
-                    </div>
-                </div>
-                
-                <div class="col-md-9">
                     <div class="my-3 p-3 jumbotron rounded shadow-sm">
                         <div class="form-row">
                             <div class="col-md-6">
-                                
+
                                 <label>Codigo de Ususario</label>
                                 <asp:TextBox CssClass="form-control" ID="TxtCod" runat="server" OnTextChanged="TxtCod_TextChanged" AutoPostBack="true"></asp:TextBox>
 
 
                                 <label>Contraseña</label>
                                 <asp:TextBox class="form-control" ID="TxtContra" runat="server"></asp:TextBox>
-                                
+
                                 <label>Confirmar Contraseña</label>
                                 <asp:TextBox class="form-control" ID="TxtContra2" runat="server"></asp:TextBox>
 
@@ -63,20 +64,37 @@
 
                         </div>
                     </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
 
-                    <div class="form-row">
-                        <div class="col-md-4">
-                            <asp:Button CssClass="btn btn-success btn-block" ID="BtnGuardar" runat="server" Text="Borrar" OnClick="BtnGuardar_Click" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:Button CssClass="btn btn-danger btn-block" ID="BtnBorrar" runat="server" Text="Borrar" OnClick="BtnBorrar_Click" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:Button CssClass="btn btn-secondary btn-block" ID="BtnLimpiar" runat="server" Text="Limpiar" OnClick="BtnLimpiar_Click" />
-                        </div>
-                    </div>
+            <div class="form-row">
+                <div class="col-md-4">
+
+                    <asp:LinkButton CssClass="btn btn-success btn-block" ID="BtnGuardar" runat="server" OnClick="BtnGuardar_Click">
+                                <i class="fas fa-save"></i><span> Guardar</span>
+                    </asp:LinkButton>
+
 
                 </div>
+                <div class="col-md-4">
+                    <asp:LinkButton CssClass="btn btn-danger btn-block" ID="BtnBorrar" runat="server" OnClick="BtnBorrar_Click">
+                                <i class="fas fa-eraser"></i><span> Borrar</span>
+                    </asp:LinkButton>
+
+                </div>
+                <div class="col-md-4">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <asp:LinkButton CssClass="btn btn-secondary btn-block" ID="BtnLimpiar" runat="server" OnClick="BtnLimpiar_Click">
+                                <i class="fas fa-magic"></i><span> Limpiar</span>
+                            </asp:LinkButton>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </asp:Content>
 

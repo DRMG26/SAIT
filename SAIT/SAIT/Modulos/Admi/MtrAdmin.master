@@ -14,8 +14,11 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/css/sb-admin.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link href="~/css/sb-admin.css" rel="stylesheet" /><%--Stilo del menu de nevegacion--%>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script><%--Sweealalert--%> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> <%--Iconos--%>
+
+
     
     <script type="text/javascript">
 
@@ -93,7 +96,7 @@
             <ul class="sidebar navbar-nav">
                 <li class="nav-item" ID="Ini">
                     <asp:LinkButton OnClick="LBtnInicio_Click" ID="LBtnInicio" runat="server" CssClass="nav-link">
-                        <i class="fas fa-fw fa-chart-area">
+                        <i class="fas fa-fw fa-home">
                             <span>Inicio</span>
                         </i>
                     </asp:LinkButton>
@@ -116,14 +119,15 @@
       </li>--%>
                 <li class="nav-item">
                     <asp:LinkButton OnClick="LBtnAudi_Click" ID="LBtnAudi" runat="server" CssClass="nav-link">
-                        <i class="fas fa-fw fa-chart-area">
+                        <i class="fas fa-fw fa-user-clock">
                             <span>Auditoria</span>
                         </i>
                     </asp:LinkButton>
                 </li>
                 <li class="nav-item">
                     <asp:LinkButton OnClick="LBtnPerfi_Click" ID="LBtnPerfi" runat="server" CssClass="nav-link">
-                        <i class="fas fa-fw fa-chart-area">
+                       
+                            <i class="fas fa-fw fa-address-card">
                             <span>Perfiles</span>
                         </i>
                     </asp:LinkButton>
