@@ -185,6 +185,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
+    <Content Include="Images\icos\favicon.ico" />
+    <Content Include="Images\img-01.png" />
+    <Content Include="Images\img-02.png" />
+    <Content Include="Images\img-04.png" />
+    <Content Include="Login.aspx" />
     <Content Include="Modulos\Admi\FrmAudi.aspx" />
     <Content Include="Modulos\Admi\FrmMenuAdm.aspx" />
     <Content Include="Modulos\Admi\FrmPerfiles.aspx" />
@@ -382,8 +387,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\DatosUsuario.cs" />
     <Compile Include="Clases\Operaciones.cs" />
     <Compile Include="Clases\UrlModuloAdmin.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,6 +407,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Modulos\Admi\FrmAudi.aspx.cs">

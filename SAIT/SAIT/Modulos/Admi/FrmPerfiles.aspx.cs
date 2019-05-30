@@ -48,14 +48,15 @@ namespace SAIT.Modulos.Admi
         protected void Guardar()
         {
 
-            if (TxtCod.Text == "" || TxtContra.Text == "")
+            if (TxtCod.Text.Trim() == "" || TxtContra.Text.Trim() == "")
             {
-                StMensaje = "Mensaje('Llenar todos los campos','Datos Incompletos','info');";
+                StMensaje = @"<script type='text/javascript'>
+                            Mensaje('Llenar los campos obligatorios','','info');
+                        </script>";
                 Page.RegisterStartupScript("Mensaje", StMensaje);
                 return;
-
             }
-            StCampos = "@COD_DOC=" + TxtCod.Text;
+            StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
             StCampos = StCampos + ",@CONTRA=" + TxtContra.Text;
             StCampos = StCampos + ",@DOCU=" + (TxtDoc.Text == "" ? TxtDoc.Text : "NULL");
             StCampos = StCampos + ",@OPERACION=0";
@@ -85,12 +86,16 @@ namespace SAIT.Modulos.Admi
         //Verifica si existe el perfil
         protected void Existe()
         {
-            StCampos = "@COD_DOC=" + TxtCod.Text;
+            if (TxtCod.Text.Trim() == "")
+            {
+                return;
+            }
+            StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
             StCampos = StCampos + ",@OPERACION=1";
             StCampos = StCampos + ",@resultado=0";
             if (Ope.BoolSp("SP_CONS_PERFIL", StCampos))
             {
-                StCampos = "@COD_DOC=" + TxtCod.Text;
+                StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
                 StCampos = StCampos + ",@CONTRA=" + TxtContra.Text;
                 StCampos = StCampos + ",@DOCU=" + (TxtDoc.Text == "" ? TxtDoc.Text : "NULL");
                 StCampos = StCampos + ",@OPERACION=2";
@@ -136,7 +141,7 @@ namespace SAIT.Modulos.Admi
         //Busca los perfiles
         protected void Buscar()
         {
-            StCampos = "@COD_DOC=" + TxtCod.Text;
+            StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
             StCampos = StCampos + ",@OPERACION=0";
             StCampos = StCampos + ",@resultado=0";
             string[][] StArr = Ope.SelectSP("SP_CONS_PERFIL", StCampos);
@@ -173,12 +178,12 @@ namespace SAIT.Modulos.Admi
         protected void BORRAR()
         {
             
-            StCampos = "@COD_DOC=" + TxtCod.Text;
+            StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
             StCampos = StCampos + ",@OPERACION=1";
             StCampos = StCampos + ",@resultado=0";
             if (Ope.BoolSp("SP_CONS_PERFIL", StCampos))
             {
-                StCampos = "@COD_DOC=" + TxtCod.Text;
+                StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
                 StCampos = StCampos + ",@OPERACION=1";
                 StCampos = StCampos + ",@resultado=0";
                 string[][] StArr = Ope.SelectSP("SP_IUD_PERFILES", StCampos);

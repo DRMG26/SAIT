@@ -16,10 +16,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/css/sb-admin.css" rel="stylesheet" /><%--Stilo del menu de nevegacion--%>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script><%--Sweealalert--%> 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> <%--Iconos--%>
-
-
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> <%--Iconos--%>    
     <script type="text/javascript">
 
         function Mensaje(Mensaje,Titulo,Typo) {
@@ -29,9 +26,6 @@
                 text: Titulo
             })
         }
-        
-       
-
     </script>
 
 </head>
