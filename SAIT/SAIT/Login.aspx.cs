@@ -46,32 +46,6 @@ namespace SAIT
                     
                 }
 
-
-                //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connect"].ToString());
-                //con.Open();
-
-                //SqlCommand cmd = new SqlCommand("select * from SEG_USUARIOS where  CLAVE =@CLAVE and USUARIO=@USUARIO", con);
-
-                //cmd.Parameters.AddWithValue("@USUARIO", TxtUser.Text);
-                //cmd.Parameters.AddWithValue("@CLAVE ", Txtpass.Text);
-                //SqlDataReader sdr = cmd.ExecuteReader();
-
-                //if (sdr.Read())
-                //{
-                //    string script = "alert('Bienvido, ingreso correcto');";
-
-                //    ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
-                //    
-
-                //}
-                //else
-                //{
-                //    string script = "alert('Usuario y/o contrasena incorrectos');";
-
-                //    ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
-
-                //}
-
             }
 #pragma warning disable CS0168 // La variable está declarada pero nunca se usa
             catch (Exception ex)

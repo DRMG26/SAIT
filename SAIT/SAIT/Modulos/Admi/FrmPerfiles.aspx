@@ -28,15 +28,15 @@
                                 <label>Contraseña</label>
                                 <asp:TextBox class="form-control" ID="TxtContra" runat="server"></asp:TextBox>
 
-                                <label>Confirmar Contraseña</label>
-                                <asp:TextBox class="form-control" ID="TxtContra2" runat="server"></asp:TextBox>
+<%--                                <label>Confirmar Contraseña</label>
+                                <asp:TextBox class="form-control" ID="TxtContra2" runat="server"></asp:TextBox>--%>
 
 
                                 <label>Documento</label>
                                 <div class="input-group mb-3">
-                                    <asp:TextBox class="form-control" ID="TxtDoc" runat="server"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="TxtDoc" Enabled ="false"  runat="server"></asp:TextBox>
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                                        <a class="btn btn-outline-secondary" id="button-addon2" data-toggle="modal" data-target=".BuscarUsu">Buscar</a>
                                     </div>
                                 </div>
 
@@ -94,6 +94,50 @@
             </div>
 
         </div>
+    </div>
+
+
+    <div class ="modal fade BuscarUsu">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <div class="row ">
+                         <div class="col-md-10">
+                             <h2>Buscar un usuario</h2>
+                         </div>
+                        <div class="col-md-2">
+                            <button data-dismiss="modal"Class="btn btn-danger close">X</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                <ContentTemplate>
+                     <div class="row ">
+                         <div class="col-md-6">
+                             <asp:Label ID="Label1" runat="server" Text="Label">Numero de Documento</asp:Label>
+                             <asp:TextBox class="form-control" ID="TxtBuscar" runat="server" OnTextChanged ="TxtBuscar_TextChanged"></asp:TextBox>
+                         </div>
+                         <div class="col-md-6">
+                             <asp:LinkButton CssClass="btn btn-success btn-block" ID="BtnBuscar" runat="server" OnClick="BtnBuscar_Click1">
+                                <i class="fas fa-save"></i><span> Buscar</span>
+                             </asp:LinkButton>
+                         </div>
+                         <div class="table-responsive">
+                             <asp:GridView ID="GrdUsus" runat="server" CssClass="table table-striped" OnRowCommand ="GrdUsus_RowCommand" AutoGenerateColumns="False">
+                                 <Columns>
+                                     <asp:BoundField DataField="TX_DOCU_USU" HeaderText="Documento" />
+                                     <asp:BoundField DataField="NOMBRES" HeaderText="Nombres y Apellidos"/>
+                                     <asp:ButtonField ButtonType="Button" CommandName="IncreasePrice" Text="Seleccionar"  />
+                                 </Columns>
+                             </asp:GridView>
+                         </div>
+                     </div>
+                    </ContentTemplate></asp:UpdatePanel>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </asp:Content>

@@ -34,7 +34,7 @@ namespace SAIT.Modulos.Admi
         {
             TxtCod.Text = "";
             TxtContra.Text = "";
-            TxtContra2.Text = "";
+            //TxtContra2.Text = "";
             TxtDoc.Text = "";
             RadioButton1.Checked = true;
         }
@@ -58,7 +58,7 @@ namespace SAIT.Modulos.Admi
             }
             StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
             StCampos = StCampos + ",@CONTRA=" + TxtContra.Text;
-            StCampos = StCampos + ",@DOCU=" + (TxtDoc.Text == "" ? TxtDoc.Text : "NULL");
+            StCampos = StCampos + ",@DOCU=" + TxtDoc.Text;
             StCampos = StCampos + ",@OPERACION=0";
             StCampos = StCampos + ",@TIPO=" + (RadioButton1.Checked == true ? "0" : (RadioButton2.Checked == true ? "1" : (RadioButton3.Checked == true ? "2" : "2")));
             StCampos = StCampos + ",@resultado=0";
@@ -97,7 +97,7 @@ namespace SAIT.Modulos.Admi
             {
                 StCampos = "@COD_DOC=" + TxtCod.Text.ToUpper();
                 StCampos = StCampos + ",@CONTRA=" + TxtContra.Text;
-                StCampos = StCampos + ",@DOCU=" + (TxtDoc.Text == "" ? TxtDoc.Text : "NULL");
+                StCampos = StCampos + ",@DOCU=" + TxtDoc.Text;
                 StCampos = StCampos + ",@OPERACION=2";
                 StCampos = StCampos + ",@TIPO=" + (RadioButton1.Checked == true ? "0" : (RadioButton2.Checked == true ? "1" : (RadioButton3.Checked == true ? "2" : "2")));
                 StCampos = StCampos + ",@resultado=0";
@@ -221,6 +221,45 @@ namespace SAIT.Modulos.Admi
             BORRAR();
         }
 
+        protected void BtnBuscar_Click1(object sender, EventArgs e)
+        {
+            BuscarUsu();
+        }
+
+        protected void BuscarUsu()
+        {
+            if (TxtBuscar.Text.Trim() != "")
+            {
+                GrdUsus.DataSource = Ope.GridConsSP("SP_BUSCAR_USUARIOS", "@OPERACION=1,@DOCU="+ TxtBuscar.Text.Trim () );
+                GrdUsus.DataBind();
+            }
+            else
+            {
+                GrdUsus.DataSource = Ope.GridConsSP("SP_BUSCAR_USUARIOS", "@OPERACION=0,@DOCU=NULL");
+                GrdUsus.DataBind();
+            }
+        }
+
+        protected void GrdUsus_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.CompareTo("IncreasePrice") == 0){
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Retrieve the row that contains the button clicked 
+                // by the user from the Rows collection.
+                GridViewRow row = GrdUsus.Rows[index];
+
+                // Create a new ListItem object for the contact in the row.     
+                ListItem item = new ListItem();
+                item.Text = Server.HtmlDecode(row.Cells[0].Text);
         
+                TxtDoc.Text = item.Text;
+            }
+        }
+
+        protected void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
