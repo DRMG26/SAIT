@@ -37,5 +37,9 @@ namespace SAIT.Modulos.Administrativo
             Response.Redirect(UrlAdmin.StrPerfiles);
         }
 
+        protected void LBtnUsu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(UrlAdmin.StrUsuarios);
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace SAIT.Clases
         public string StrAuditor = "FrmAudi.aspx";
         public string StrPerfiles = "FrmPerfiles.aspx";
         public string StrDocumentos = "FrmDocu.aspx";
-        public string StrUsuarios = "FrmUsu.aspx";
+        public string StrUsuarios = "FrmRegiUsu.aspx";
         public string StMenu = "FrmMenuAdm.aspx";
 
     }

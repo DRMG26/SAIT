@@ -126,6 +126,14 @@
                         </i>
                     </asp:LinkButton>
                 </li>
+                <li class="nav-item">
+                    <asp:LinkButton OnClick="LBtnUsu_Click" ID="LBtnUsu" runat="server" CssClass="nav-link">
+                       
+                            <i class="fas fa-fw fa-users">
+                            <span>Usuarips</span>
+                        </i>
+                    </asp:LinkButton>
+                </li>
             </ul>
 
             <div id="content-wrapper">

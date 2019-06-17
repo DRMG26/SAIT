@@ -49,6 +49,15 @@ namespace SAIT.Modulos.Administrativo {
         protected global::System.Web.UI.WebControls.LinkButton LBtnPerfi;
         
         /// <summary>
+        /// Control LBtnUsu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LBtnUsu;
+        
+        /// <summary>
         /// Control MainContent.
         /// </summary>
         /// <remarks>

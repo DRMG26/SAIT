@@ -47,7 +47,7 @@
                 Formulario en donde se prodra requistrar nuevos usuarios o actualizar su informacion
             </p>
             <p>
-                <asp:LinkButton ID="LBtnUsu" runat="server" CssClass="btn btn-outline-primary">
+                <asp:LinkButton ID="LBtnUsu" runat="server" CssClass="btn btn-outline-primary" OnClick="LBtnUsu_Click">
                     <span>Entrar &raquo;</span>
                 </asp:LinkButton>
             </p>
